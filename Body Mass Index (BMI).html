@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Body Mass Index (BMI)</title>
+
+<script type="text/javascript">
+	function calculateBMI() {
+
+		//TODO
+    var paino = document.getElementById("weight").value;
+    var pituus = document.getElementById("height").value;
+    var lasku = paino / (pituus/100.0 * pituus/100.0); 
+    console.log(lasku);
+        if (lasku < 18.4) {
+            document.getElementById("answer").innerHTML = "Body mass Index (BMI) is  ("+lasku.toFixed(2)+") (Weight less than normal weight)";
+                    }
+        else if (lasku >=18.5 && lasku <= 24.9) {
+            document.getElementById("answer").innerHTML = "Body mass Index (BMI) is  ("+lasku.toFixed(2)+") (Normal weight)";
+        }
+        
+        else if (lasku >= 24.9) {
+        document.getElementById("answer").innerHTML = "Body mass Index (BMI) is  ("+lasku.toFixed(2)+") (over weight)";        }
+        
+    }
+        
+		
+	
+</script>
+</head>
+<body>
+	<h3>Body Mass Index (BMI)</h3>
+
+	<form>
+		<p>
+			<label>Weight: </label> <input type="text" name="weight" id="weight"
+				size="3"> kg
+		</p>
+		<p>
+			<label>Height: </label> <input type="text" name="height" id="height"
+				size="3"> cm &nbsp;&nbsp;&nbsp;
+		</p>
+		<p>
+			<input type="button" value="Calculate BMI" onClick="calculateBMI()">
+		</p>
+	</form>
+
+	<div id="answer"></div>
+</body>
+</html>
+
+<!-- test example:
+weight = 89, height = 180-> bmi= 24.69 (Normal Weight)
+-->
+
